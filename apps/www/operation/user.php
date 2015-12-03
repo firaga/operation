@@ -1,7 +1,7 @@
 <?php
 Ko_Web_Route::VGet('index', function()
 {
-echo "he";
+echo "hee";
 });
 
 Ko_Web_Route::VGet('reg', function()
