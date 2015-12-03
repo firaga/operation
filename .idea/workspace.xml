@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b267b022-dcb6-4c60-bbcb-598848ad3cd4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/conf/rewrite/default.txt" afterPath="$PROJECT_DIR$/apps/conf/rewrite/default.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/conf/rewrite/operation.txt" afterPath="$PROJECT_DIR$/apps/conf/rewrite/operation.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/conf/rewrite/passport.txt" afterPath="$PROJECT_DIR$/apps/conf/rewrite/passport.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/images/css/passport.css" afterPath="$PROJECT_DIR$/apps/images/css/passport.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/images/css/reset.css" afterPath="$PROJECT_DIR$/apps/images/css/reset.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/images/js/angular-1.4.5/docs/components/google-code-prettify-1.0.1/README-zh-Hans.html" afterPath="$PROJECT_DIR$/apps/images/js/angular-1.4.5/docs/components/google-code-prettify-1.0.1/README-zh-Hans.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/images/js/angular-1.4.5/docs/components/google-code-prettify-1.0.1/styles/desert.css" afterPath="$PROJECT_DIR$/apps/images/js/angular-1.4.5/docs/components/google-code-prettify-1.0.1/styles/desert.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/images/js/angular-1.4.5/docs/components/google-code-prettify-1.0.1/styles/sons-of-obsidian.css" afterPath="$PROJECT_DIR$/apps/images/js/angular-1.4.5/docs/components/google-code-prettify-1.0.1/styles/sons-of-obsidian.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/include/photo/Api.php" afterPath="$PROJECT_DIR$/apps/include/photo/Api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/include/render/base.php" afterPath="$PROJECT_DIR$/apps/include/render/base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/include/render/default.php" afterPath="$PROJECT_DIR$/apps/include/render/default.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/include/render/json.php" afterPath="$PROJECT_DIR$/apps/include/render/json.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/include/render/passport.php" afterPath="$PROJECT_DIR$/apps/include/render/passport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/include/rest/user/agent.php" afterPath="$PROJECT_DIR$/apps/include/rest/user/agent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/default/blog/item.html" afterPath="$PROJECT_DIR$/apps/templates/default/blog/item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/default/common/footer.html" afterPath="$PROJECT_DIR$/apps/templates/default/common/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/default/common/header.html" afterPath="$PROJECT_DIR$/apps/templates/default/common/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/default/index.html" afterPath="$PROJECT_DIR$/apps/templates/default/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/default/photo/album.html" afterPath="$PROJECT_DIR$/apps/templates/default/photo/album.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/default/photo/user.html" afterPath="$PROJECT_DIR$/apps/templates/default/photo/user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/passport/common/footer.html" afterPath="$PROJECT_DIR$/apps/templates/passport/common/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/passport/common/header.html" afterPath="$PROJECT_DIR$/apps/templates/passport/common/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/passport/user/login.html" afterPath="$PROJECT_DIR$/apps/templates/passport/user/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/passport/user/logo.html" afterPath="$PROJECT_DIR$/apps/templates/passport/user/logo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/templates/passport/user/reg.html" afterPath="$PROJECT_DIR$/apps/templates/passport/user/reg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/www/default/index.php" afterPath="$PROJECT_DIR$/apps/www/default/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/www/default/rest.php" afterPath="$PROJECT_DIR$/apps/www/default/rest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/www/operation/index.php" afterPath="$PROJECT_DIR$/apps/www/operation/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/www/operation/rest.php" afterPath="$PROJECT_DIR$/apps/www/operation/rest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/www/passport/rest.php" afterPath="$PROJECT_DIR$/apps/www/passport/rest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/app/Base.php" afterPath="$PROJECT_DIR$/ko/app/Base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/app/Safe.php" afterPath="$PROJECT_DIR$/ko/app/Safe.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/busi/Api.php" afterPath="$PROJECT_DIR$/ko/busi/Api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/busi/AutoFacade.php" afterPath="$PROJECT_DIR$/ko/busi/AutoFacade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/busi/Facade.php" afterPath="$PROJECT_DIR$/ko/busi/Facade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/busi/Func.php" afterPath="$PROJECT_DIR$/ko/busi/Func.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/Config.php" afterPath="$PROJECT_DIR$/ko/dao/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/CustomFactory.php" afterPath="$PROJECT_DIR$/ko/dao/CustomFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/DB.php" afterPath="$PROJECT_DIR$/ko/dao/DB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/DBHandler.php" afterPath="$PROJECT_DIR$/ko/dao/DBHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/DBHelp.php" afterPath="$PROJECT_DIR$/ko/dao/DBHelp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/DBSplit.php" afterPath="$PROJECT_DIR$/ko/dao/DBSplit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/Factory.php" afterPath="$PROJECT_DIR$/ko/dao/Factory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/File.php" afterPath="$PROJECT_DIR$/ko/dao/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/IdGen.php" afterPath="$PROJECT_DIR$/ko/dao/IdGen.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/LCacheEx.php" afterPath="$PROJECT_DIR$/ko/dao/LCacheEx.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/ModuleCache.php" afterPath="$PROJECT_DIR$/ko/dao/ModuleCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/Mysql.php" afterPath="$PROJECT_DIR$/ko/dao/Mysql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/MysqlAgent.php" afterPath="$PROJECT_DIR$/ko/dao/MysqlAgent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/dao/UserOne.php" afterPath="$PROJECT_DIR$/ko/dao/UserOne.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/DBCache.php" afterPath="$PROJECT_DIR$/ko/data/DBCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/DBMan.php" afterPath="$PROJECT_DIR$/ko/data/DBMan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/DBManCtrl.php" afterPath="$PROJECT_DIR$/ko/data/DBManCtrl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/IDMan.php" afterPath="$PROJECT_DIR$/ko/data/IDMan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/LCAgent.php" afterPath="$PROJECT_DIR$/ko/data/LCAgent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/MCAgent.php" afterPath="$PROJECT_DIR$/ko/data/MCAgent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/Mongo.php" afterPath="$PROJECT_DIR$/ko/data/Mongo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/MongoDB.php" afterPath="$PROJECT_DIR$/ko/data/MongoDB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/RedisAgent.php" afterPath="$PROJECT_DIR$/ko/data/RedisAgent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/SqlAgent.php" afterPath="$PROJECT_DIR$/ko/data/SqlAgent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/Storage.php" afterPath="$PROJECT_DIR$/ko/data/Storage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/data/UObjectAgent.php" afterPath="$PROJECT_DIR$/ko/data/UObjectAgent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/html/Filter.php" afterPath="$PROJECT_DIR$/ko/html/Filter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/html/Item.php" afterPath="$PROJECT_DIR$/ko/html/Item.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/html/Str.php" afterPath="$PROJECT_DIR$/ko/html/Str.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/html/Styles.php" afterPath="$PROJECT_DIR$/ko/html/Styles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/html/Utils.php" afterPath="$PROJECT_DIR$/ko/html/Utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/AdList.php" afterPath="$PROJECT_DIR$/ko/mode/AdList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/Counter.php" afterPath="$PROJECT_DIR$/ko/mode/Counter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/Crontab.php" afterPath="$PROJECT_DIR$/ko/mode/Crontab.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/Follow.php" afterPath="$PROJECT_DIR$/ko/mode/Follow.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/Item.php" afterPath="$PROJECT_DIR$/ko/mode/Item.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/ItemObserver.php" afterPath="$PROJECT_DIR$/ko/mode/ItemObserver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/Limit.php" afterPath="$PROJECT_DIR$/ko/mode/Limit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/LimitMysql.php" afterPath="$PROJECT_DIR$/ko/mode/LimitMysql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/LimitRedis.php" afterPath="$PROJECT_DIR$/ko/mode/LimitRedis.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/Message.php" afterPath="$PROJECT_DIR$/ko/mode/Message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/Monitor.php" afterPath="$PROJECT_DIR$/ko/mode/Monitor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/OAuth2Client.php" afterPath="$PROJECT_DIR$/ko/mode/OAuth2Client.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/OAuth2Server.php" afterPath="$PROJECT_DIR$/ko/mode/OAuth2Server.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/OAuthBase.php" afterPath="$PROJECT_DIR$/ko/mode/OAuthBase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/OAuthClient.php" afterPath="$PROJECT_DIR$/ko/mode/OAuthClient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/OAuthServer.php" afterPath="$PROJECT_DIR$/ko/mode/OAuthServer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/OAuthServerBase.php" afterPath="$PROJECT_DIR$/ko/mode/OAuthServerBase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/OCMT.php" afterPath="$PROJECT_DIR$/ko/mode/OCMT.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/Tree.php" afterPath="$PROJECT_DIR$/ko/mode/Tree.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/User.php" afterPath="$PROJECT_DIR$/ko/mode/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/XIAuth.php" afterPath="$PROJECT_DIR$/ko/mode/XIAuth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/mode/XIUI.php" afterPath="$PROJECT_DIR$/ko/mode/XIUI.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/CMD.php" afterPath="$PROJECT_DIR$/ko/tool/CMD.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Debug.php" afterPath="$PROJECT_DIR$/ko/tool/Debug.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Enc.php" afterPath="$PROJECT_DIR$/ko/tool/Enc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Image.php" afterPath="$PROJECT_DIR$/ko/tool/Image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Input.php" afterPath="$PROJECT_DIR$/ko/tool/Input.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Ip.php" afterPath="$PROJECT_DIR$/ko/tool/Ip.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/MONGO.php" afterPath="$PROJECT_DIR$/ko/tool/MONGO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Module.php" afterPath="$PROJECT_DIR$/ko/tool/Module.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Object.php" afterPath="$PROJECT_DIR$/ko/tool/Object.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Option.php" afterPath="$PROJECT_DIR$/ko/tool/Option.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Pinyin.php" afterPath="$PROJECT_DIR$/ko/tool/Pinyin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/SQL.php" afterPath="$PROJECT_DIR$/ko/tool/SQL.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Singleton.php" afterPath="$PROJECT_DIR$/ko/tool/Singleton.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/StrParser.php" afterPath="$PROJECT_DIR$/ko/tool/StrParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/tool/Utils.php" afterPath="$PROJECT_DIR$/ko/tool/Utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/view/Base.php" afterPath="$PROJECT_DIR$/ko/view/Base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/view/Smarty.php" afterPath="$PROJECT_DIR$/ko/view/Smarty.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/view/Str.php" afterPath="$PROJECT_DIR$/ko/view/Str.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/view/render/FILE.php" afterPath="$PROJECT_DIR$/ko/view/render/FILE.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/web/Config.php" afterPath="$PROJECT_DIR$/ko/web/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/web/Error.php" afterPath="$PROJECT_DIR$/ko/web/Error.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/web/Rewrite.php" afterPath="$PROJECT_DIR$/ko/web/Rewrite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ko/web/Route.php" afterPath="$PROJECT_DIR$/ko/web/Route.php" />
+    </list>
+    <ignored path="operation.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="operation" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exception.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ko/Exception.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.5">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ko.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ko/ko.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.535714">
+              <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Base.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ko/view/Base.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.535714">
+              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mongo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ko/data/Mongo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.821428">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/www/operation/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2895238">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/www/operation/user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.928572">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemCache.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ko/data/MemCache.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/ko/Exception.php" />
+        <option value="$PROJECT_DIR$/ko/ko.class.php" />
+        <option value="$PROJECT_DIR$/ko/view/Base.php" />
+        <option value="$PROJECT_DIR$/apps/www/operation/user.php" />
+        <option value="$PROJECT_DIR$/apps/www/operation/index.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="984" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="passport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="vcs" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mfw/trunk" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="js.eslint.nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b267b022-dcb6-4c60-bbcb-598848ad3cd4" name="Default" comment="" />
+      <created>1449133562674</created>
+      <option name="number" value="Default" />
+      <updated>1449133562674</updated>
+    </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1449133663252</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1449133663252</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test">
+      <created>1449133781474</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1449133781474</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add file">
+      <created>1449135430063</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1449135430063</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add file">
+      <created>1449136017927</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1449136017927</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add file">
+      <created>1449136944663</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1449136944663</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1920" height="984" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290993" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290993" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290993" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25239617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="test" />
+    <MESSAGE value="add file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ko/Exception.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ko/ko.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.535714">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ko/view/Base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.535714">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ko/data/MemCache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ko/data/Mongo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.821428">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/www/operation/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.928572">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/www/operation/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2895238">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
