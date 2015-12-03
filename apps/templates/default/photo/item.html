@@ -1,0 +1,224 @@
+<div id="photodata" class="hide"
+     data-uid="{$userinfo.uid}"
+     data-albumid="{$albuminfo.albumid}"
+     data-photoid="{$photoinfo.photoid}"
+     data-prev="{$photoinfo.prev}"
+     data-next="{$photoinfo.next}">
+</div>
+
+<div class="main">
+    <div class="title left" style="padding-right: 36px;">
+        <a href="user?uid={$userinfo.uid}"><img src="{$userinfo.logo80}" style="border-radius: 40px;vertical-align: middle;"></a>
+    </div>
+    <div class="title left" style="padding-right: 5px;">
+        <a href="user?uid={$userinfo.uid}">{$userinfo.nickname}</a> 的相册
+    </div>
+    <div class="title left">
+        <a href="album?uid={$userinfo.uid}&albumid={$albuminfo.albumid}">{$albuminfo.title}</a> &gt;&nbsp;
+    </div>
+    <div class="title left">
+        <span id="txtPhototitle">{$photoinfo.title}</span>
+        {if $logininfo.uid == $userinfo.uid && !$albuminfo.isrecycle}
+        <span id="inputPhototitle" class="hide">
+            <input type="text" value="{$photoinfo.title}" placeholder="照片标题" style="width: 200px;height: 30px;">
+        </span>
+        {/if}
+    </div>
+    <div class="clear"></div>
+
+    <a name="image"></a>
+    <div>
+        <div class="left" style="width: {$photoinfo.imagesize}px;padding: 0 {(800 - $photoinfo.imagesize) / 2 + 10}px 0 {(800 - $photoinfo.imagesize) / 2 + 10}px;">
+            <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+                <div class="left" style="width: 100px;">
+                    {if $photoinfo.prev}
+                    <a href="?uid={$userinfo.uid}&photoid={$photoinfo.prev}#image">上一张</a>
+                    {else}
+                    上一张
+                    {/if}
+                </div>
+                <div class="left" style="width: {$photoinfo.imagesize - 200}px;text-align: center;">
+                    {$photoinfo.pos} / {$albuminfo.pcount}
+                </div>
+                <div class="right">
+                    {if $photoinfo.next}
+                    <a href="?uid={$userinfo.uid}&photoid={$photoinfo.next}#image">下一张</a>
+                    {else}
+                    下一张
+                    {/if}
+                </div>
+            </div>
+	        <div class="clear"></div>
+            <div id="photodiv" style="text-align: center;">
+                <img src="{$photoinfo.image}">
+            </div>
+            <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+                <div class="left">
+                    上传于：{$photoinfo.ctime|substr:0:16}
+                </div>
+                <div class="right">
+                    {if $logininfo.uid == $userinfo.uid}
+                    <a href="javascript:;" id="deletePhoto">删除</a> |
+                    {/if}
+                    <a href="{$photoinfo.image_src}" target="_blank">查看原图</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            {if strlen($photoinfo.image_exif.DateTime)}
+            <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+                {$photoinfo.image_exif.DateTime[4] = '-'}
+                {$photoinfo.image_exif.DateTime[7] = '-'}
+                拍摄于：{$photoinfo.image_exif.DateTime|substr:0:16}
+                {if strlen($photoinfo.image_exif.Make)}
+                    / {$photoinfo.image_exif.Make} {$photoinfo.image_exif.Model}
+                {/if}
+            </div>
+            {/if}
+            {if strlen($photoinfo.image_exif.FocalLength)}
+            <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+                焦距： {$photoinfo.image_exif.FocalLength}
+            </div>
+            {/if}
+            {if strlen($photoinfo.image_exif.FNumber)}
+            <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+                光圈： {$photoinfo.image_exif.FNumber}
+            </div>
+            {/if}
+            {if strlen($photoinfo.image_exif.ExposureTime)}
+            <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+                快门： {$photoinfo.image_exif.ExposureTime}
+            </div>
+            {/if}
+            {if strlen($photoinfo.image_exif.ISOSpeedRatings)}
+            <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+                感光度： {$photoinfo.image_exif.ISOSpeedRatings}
+            </div>
+            {/if}
+            {if strlen($photoinfo.image_exif.Flash)}
+            <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+                闪光灯： {$photoinfo.image_exif.Flash}
+            </div>
+            {/if}
+	        {if (is_array($photoinfo.image_exif.GPSLatitude) || strlen($photoinfo.image_exif.GPSLatitude))
+	            && (is_array($photoinfo.image_exif.GPSLongitude) || strlen($photoinfo.image_exif.GPSLongitude))}
+	        <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+		        坐标： {$photoinfo.image_exif.GPSLatitudeRef} {if is_array($photoinfo.image_exif.GPSLatitude)}{implode(', ', $photoinfo.image_exif.GPSLatitude)}{else}{$photoinfo.image_exif.GPSLatitude}{/if}
+		        , {$photoinfo.image_exif.GPSLongitudeRef} {if is_array($photoinfo.image_exif.GPSLongitude)}{implode(', ', $photoinfo.image_exif.GPSLongitude)}{else}{$photoinfo.image_exif.GPSLongitude}{/if}
+	        </div>
+	        {/if}
+	        {if strlen($photoinfo.image_exif.GPSAltitude)}
+	        <div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+		        海拔： {if $photoinfo.image_exif.GPSAltitudeRef}-{$photoinfo.image_exif.GPSAltitude}{else}{$photoinfo.image_exif.GPSAltitude}{/if}
+	        </div>
+	        {/if}
+        </div>
+        <div class="left" style="width: 140px;padding: 20px 20px 0 20px;text-align: center;">
+            {foreach $prevlist as $prev}
+            <div class="left" style="width: 70px;height: 70px;line-height: 70px;text-align: center;">
+                <a href="?uid={$userinfo.uid}&photoid={$prev.photoid}#image"><img src="{$prev.image}" style="vertical-align: middle;"></a>
+            </div>
+            {/foreach}
+            <div class="left" style="width: 70px;eight: 70px;line-height: 70px;text-align: center;">
+                <img src="{$photoinfo.image_small}" style="vertical-align: middle;border: solid 3px #999999;">
+            </div>
+            {foreach $nextlist as $next}
+            <div class="left" style="width: 70px;height: 70px;line-height: 70px;text-align: center;">
+                <a href="?uid={$userinfo.uid}&photoid={$next.photoid}#image"><img src="{$next.image}" style="vertical-align: middle;"></a>
+            </div>
+            {/foreach}
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+{literal}
+<script language="JavaScript">
+    (function() {
+        //点击图片
+        $('body').delegate('#photodiv', 'mousemove', function (e) {
+            var half = e.currentTarget.offsetWidth / 2;
+            if (e.offsetX + (e.currentTarget.clientWidth - e.target.clientWidth) / 2 > half) {
+                $(this).css('cursor', 'e-resize');
+            } else {
+                $(this).css('cursor', 'w-resize');
+            }
+        });
+        $('body').delegate('#photodiv', 'click', function (e) {
+            var half = e.currentTarget.offsetWidth / 2;
+            if (e.offsetX + (e.currentTarget.clientWidth - e.target.clientWidth) / 2 > half) {
+                var photoid = parseInt($('#photodata').data('next'));
+            } else {
+                var photoid = parseInt($('#photodata').data('prev'));
+            }
+            if (photoid) {
+                var uid = $('#photodata').data('uid');
+                window.location.href = '?uid=' + uid + '&photoid=' + photoid + '#image';
+            }
+        });
+    })();
+
+    (function(){
+        //修改图片标题
+        function savePhotoTitle() {
+            var oldVal = $('#txtPhototitle').text();
+            var newVal = $('#inputPhototitle input').val();
+            if (oldVal != newVal && '' != newVal) {
+                var uid = $('#photodata').data('uid');
+                var photoid = $('#photodata').data('photoid');
+                $.post('/rest/photo/item/' + uid + '_' + photoid,
+                        {'method':'PUT', 'put_style':'title', 'update': newVal},
+                        function(data, status){
+                    if (data.errno) {
+                        alert(data.error);
+                    } else {
+                        $('#txtPhototitle').text(newVal);
+                        $('#txtPhototitle').show();
+                        $('#inputPhototitle').hide();
+                    }
+                }, 'json');
+            } else {
+                $('#txtPhototitle').show();
+                $('#inputPhototitle').hide();
+            }
+        }
+        if ($('#inputPhototitle').length) {
+            $('body').delegate('#txtPhototitle', 'mouseover', function(){
+                $('#txtPhototitle').hide();
+                $('#inputPhototitle').show();
+                $('#inputPhototitle input').focus();
+            });
+            $('body').delegate('#inputPhototitle', 'mouseout', function(){
+                savePhotoTitle();
+            });
+            $('body').delegate('#inputPhototitle', 'keydown', function(e){
+                if (13 == e.keyCode) {
+                    savePhotoTitle();
+                } else if (27 == e.keyCode) {
+                    $('#txtPhototitle').show();
+                    $('#inputPhototitle').hide();
+                    $('#inputPhototitle input').val($('#txtPhototitle').text());
+                }
+            });
+        }
+    })();
+
+    (function(){
+        //删除图片
+        $('body').delegate('#deletePhoto', 'click', function(){
+            var uid = $('#photodata').data('uid');
+            var albumid = $('#photodata').data('albumid');
+            var photoid = $('#photodata').data('photoid');
+            if (confirm('确认要删除该照片吗？')) {
+                $.post('/rest/photo/item/' + uid + '_' + photoid, {'method':'DELETE'}, function(data, status){
+                    if (data.errno) {
+                        alert(data.error);
+                    } else {
+                        window.location.href = 'album?uid=' + uid + '&albumid=' + albumid;
+                    }
+                }, 'json');
+            }
+        });
+    })();
+</script>
+{/literal}

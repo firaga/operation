@@ -1,0 +1,151 @@
+<div id="userdata" class="hide"
+     data-uid="{$userinfo.uid}">
+</div>
+
+<div class="main">
+	<div class="title left" style="padding-right: 36px;">
+		<img src="{$userinfo.logo80}" style="border-radius: 40px;vertical-align: middle;">
+	</div>
+	<div class="title left" style="padding-right: 5px;">
+		{$userinfo.nickname} 的博客
+	</div>
+	{if $logininfo.uid == $userinfo.uid}
+	<div class="title right" style="width:150px;text-align: center;">
+		<button id="btnAddPhoto">写博客</button>
+	</div>
+	{/if}
+	<div class="clear"></div>
+
+	<div>
+		<div class="left" style="width: 190px;padding-right: 10px;overflow: hidden;white-space: nowrap;">
+			{foreach $taginfos as $taginfo}
+			{if '全部' == $taginfo.tag}
+			<div style="line-height: 30px;">
+				<a href="?uid={$userinfo.uid}">{$taginfo.tag}({$taginfo.bcount})</a>
+			</div>
+			{/if}
+			{/foreach}
+			{foreach $taginfos as $taginfo}
+			{if '回收站' != $taginfo.tag && '未分类' != $taginfo.tag && '全部' != $taginfo.tag}
+			<div style="line-height: 30px;">
+				<a href="?uid={$userinfo.uid}&tag={$taginfo.tag|escape:'url'}">{$taginfo.tag}({$taginfo.bcount})</a>
+			</div>
+			{/if}
+			{/foreach}
+			{foreach $taginfos as $taginfo}
+			{if '未分类' == $taginfo.tag}
+			<div style="line-height: 30px;">
+				<a href="?uid={$userinfo.uid}&tag={$taginfo.tag|escape:'url'}">{$taginfo.tag}({$taginfo.bcount})</a>
+			</div>
+			{/if}
+			{/foreach}
+			{if $logininfo.uid == $userinfo.uid}
+			{foreach $taginfos as $taginfo}
+			{if '回收站' == $taginfo.tag}
+			<div style="line-height: 30px;">
+				<a href="?uid={$userinfo.uid}&tag={$taginfo.tag|escape:'url'}">{$taginfo.tag}({$taginfo.bcount})</a>
+			</div>
+			{/if}
+			{/foreach}
+			{/if}
+		</div>
+		<div class="left" style="width: 800px;">
+			{foreach $bloglist as $blog}
+			<div class="blogdiv" data-blogid="{$blog.blogid}" style="padding-bottom: 30px;">
+				<div style="height:30px;line-height: 30px;">
+					<div class="left" style="font-size: 20px;">
+						{if $blog.tags != '回收站'}
+						<a href="item?uid={$userinfo.uid}&blogid={$blog.blogid}&tag={$tag|escape:'url'}">{$bloghtml[3][$blog.blogid]}</a>
+						{else}
+						{$bloghtml[3][$blog.blogid]}
+						{/if}
+					</div>
+					<div class="right" style="font-size: 12px;color: #aaaaaa;">
+						{$blog.ctime|substr:0:16}
+					</div>
+					{if $logininfo.uid == $userinfo.uid}
+					<div class="right" style="width: 40px;font-size: 12px;color: #aaaaaa;">
+						<a href="javascript:;" class="delblog">删除</a>
+					</div>
+					{if $blog.tags != '回收站'}
+					<div class="right" style="width: 40px;font-size: 12px;color: #aaaaaa;">
+						<a href="javascript:;" class="editblog">编辑</a>
+					</div>
+					{else}
+					<div class="right" style="width: 40px;font-size: 12px;color: #aaaaaa;">
+						<a href="javascript:;" class="resetblog">恢复</a>
+					</div>
+					{/if}
+					{/if}
+					<div class="clear"></div>
+				</div>
+				<div style="line-height: 25px;font-size: 14px;color: #aaaaaa;">
+					{if strlen($blog.cover)}
+						<img class="left" src="{$blog.cover}" style="padding: 6px 6px 6px 6px;">
+					{/if}
+					{$bloghtml[4][$blog.blogid]}
+				</div>
+				<div class="clear"></div>
+			</div>
+			{/foreach}
+			{if !empty($bloglist)}
+			<div style="height: 20px;line-height: 20px;font-size: 12px;color: #aaaaaa;">
+				<div class="left">
+					{if $page.no > 1}
+					<a href="?uid={$userinfo.uid}&tag={$tag|escape:'url'}&page={$page.no-1}">上一页</a>
+					{else}
+					上一页
+					{/if}
+				</div>
+				<div class="right">
+					{if $page.no * $page.num < $page.data_total}
+					<a href="?uid={$userinfo.uid}&tag={$tag|escape:'url'}&page={$page.no+1}">下一页</a>
+					{else}
+					下一页
+					{/if}
+				</div>
+				<div class="clear"></div>
+			</div>
+			{/if}
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+{literal}
+<script language="JavaScript">
+	(function(){
+		$('body').delegate('#btnAddPhoto', 'click', function(){
+			window.location.href = 'post';
+		});
+		$('body').delegate('.editblog', 'click', function(){
+			var blogid = $(this).closest('.blogdiv').data('blogid');
+			window.location.href = 'post?blogid=' + blogid;
+		});
+		$('body').delegate('.delblog', 'click', function(){
+			var uid = $('#userdata').data('uid');
+			var blogid = $(this).closest('.blogdiv').data('blogid');
+			if (confirm('你确认要删除这篇博客？')) {
+				$.post('/rest/blog/item/' + uid + '_' + blogid, {'method': 'DELETE'}, function(data, status){
+					if (data.errno) {
+						alert(data.error);
+					} else {
+						window.location.reload();
+					}
+				}, 'json');
+			}
+		});
+		$('body').delegate('.resetblog', 'click', function(){
+			var uid = $('#userdata').data('uid');
+			var blogid = $(this).closest('.blogdiv').data('blogid');
+			$.post('/rest/blog/item/' + uid + '_' + blogid, {'method': 'PUT', 'put_style': 'reset'}, function(data, status){
+				if (data.errno) {
+					alert(data.error);
+				} else {
+					window.location.reload();
+				}
+			}, 'json');
+		});
+	})();
+</script>
+{/literal}

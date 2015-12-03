@@ -1,0 +1,488 @@
+<div id="albumdata" class="hide"
+     data-uid="{$userinfo.uid}"
+     data-albumid="{$albuminfo.albumid}"
+     data-isrecycle="{$albuminfo.isrecycle}">
+</div>
+
+<div class="main">
+    <div class="title left" style="padding-right: 36px;">
+        <a href="user?uid={$userinfo.uid}"><img src="{$userinfo.logo80}" style="border-radius: 40px;vertical-align: middle;"></a>
+    </div>
+    <div class="title left" style="padding-right: 5px;">
+        <a href="user?uid={$userinfo.uid}">{$userinfo.nickname}</a> 的相册
+    </div>
+    <div class="title left">
+	    <span id="txtAlbumtitle">{$albuminfo.title}</span>
+        {if $logininfo.uid == $userinfo.uid && !$albuminfo.isrecycle}
+        <span id="inputAlbumtitle" class="hide">
+            <input type="text" value="{$albuminfo.title}" placeholder="相册标题" style="width: 120px;height: 30px;">
+        </span>
+        {/if}
+    </div>
+    {if $logininfo.uid == $userinfo.uid && !$albuminfo.isrecycle}
+    <div class="title right" style="width:150px;text-align: center;">
+        <button id="btnAddPhoto">上传照片</button>
+    </div>
+    {/if}
+    <div class="clear"></div>
+
+	{if $logininfo.uid == $userinfo.uid}
+	<div style="font-size: 14px;height: 30px;line-height: 30px;padding: 0 5px 0 5px;">
+		<div class="left" style="height: 30px;line-height: 30px;">
+			<label><input type="checkbox" id="selectall" style="vertical-align: middle;"> 全选</label>
+		</div>
+		<div class="right" style="height: 30px;line-height: 30px;"><a id="deletePhoto" href="javascript:;">删除</a></div>
+		{$albumcount = 0}
+		{foreach $allalbumlist as $album}
+		{if $album.albumid != $albuminfo.albumid && !$album.isrecycle}
+		{$albumcount = $albumcount + 1}
+		{/if}
+		{/foreach}
+		{if $albumcount}
+		<div class="right" style="height: 30px;line-height: 30px;">&nbsp;|&nbsp;</div>
+		<div class="right" style="font-size: 8px;">
+		<select id="albumlist" class="hide">
+			{foreach $allalbumlist as $album}
+			{if $album.albumid != $albuminfo.albumid && !$album.isrecycle}
+			<option value="{$album.albumid}">{$album.title}</option>
+			{/if}
+			{/foreach}
+		</select>
+		</div>
+		<div class="right" style="height: 30px;line-height: 30px;"><a id="movePhoto" href="javascript:;">转移到相册</a>&nbsp;</div>
+		{/if}
+	</div>
+	<div class="clear"></div>
+	{/if}
+
+    {$cols = 4} {$colsHeight = array(0, 0, 0, 0)} {$colsData = array()}
+    {foreach $photolist as $photo}
+        {$minh = $colsHeight[0]} {$minindex = 0}
+        {for $i=1; $i<$cols; $i++}
+            {if $colsHeight[$i] < $minh}
+                {$minh = $colsHeight[$i]}
+                {$minindex = $i}
+            {/if}
+        {/for}
+        {if $photo.size.width < 240}
+            {$photoimgwidth = $photo.size.width}
+            {$photoimgheight = $photo.size.height}
+        {else}
+            {$photoimgwidth = 240}
+            {$photoimgheight = intval(240 * $photo.size.height / $photo.size.width)}
+        {/if}
+        {$colsData[$photo.photoid] = array($minindex, $photoimgwidth, $photoimgheight)}
+        {$colsHeight[$minindex] = $colsHeight[$minindex] + $photoimgheight + 50}
+    {/foreach}
+    <div id="photolist">
+	    {for $i=0; $i<$cols; $i++}
+	    <div id="photolist_col{$i}" class="left" data-col="{$i}" style="width: 250px;">
+		    {foreach $photolist as $photo}
+		    {if $colsData[$photo.photoid][0] == $i}
+		    <div class="photodiv" data-photoid="{$photo.photoid}" data-imgwidth="{$colsData[$photo.photoid][1]}" data-imgheight="{$colsData[$photo.photoid][2]}" style="width: 240px;padding: 5px;">
+			    <div class="photoimgdiv" style="text-align: center;position: relative;width: 240px;height: {$colsData[$photo.photoid][2]}px;">
+				    <a class="imagelink" href="item?uid={$photo.uid}&photoid={$photo.photoid}"><img class="image" src="{$photo.image}" style="vertical-align: middle;"></a>
+			    </div>
+			    <div class="clear"></div>
+
+			    {if $logininfo.uid == $userinfo.uid}
+			    <div class="photocheckdiv left" style="width: 40px;line-height: 40px;text-align: center;">
+				    <input type="checkbox" style="vertical-align: middle;width: 16px;height: 16px;">
+			    </div>
+			    {$txtwidth = 160}
+			    {else}
+			    {$txtwidth = 240}
+			    {/if}
+			    <div class="phototxtdiv left" style="width: {$txtwidth}px;overflow: hidden;line-height: 40px;height: 40px;white-space: nowrap;text-align: center;font-size: 12px; color: #aaaaaa;">
+				    <span class="txtPhototitle">{$photo.title}</span>
+				    {if $logininfo.uid == $userinfo.uid && !$albuminfo.isrecycle}
+				    <span class="inputPhototitle hide" style="line-height: 40px;">
+					    <input type="text" value="{$photo.title}" placeholder="照片标题" style="text-align: center;width: {$txtwidth-10}px;height: 40px;">
+				    </span>
+				    {/if}
+			    </div>
+                {if $logininfo.uid == $userinfo.uid && !$albuminfo.isrecycle}
+                <div class="photoeditdiv left" style="width: 40px;line-height: 40px;text-align: center;">
+                    <img src="http://{$IMG_DOMAIN}/edit.png" style="vertical-align: middle;">
+                </div>
+                {/if}
+			    <div class="clear"></div>
+		    </div>
+		    {/if}
+		    {/foreach}
+	    </div>
+	    {/for}
+    </div>
+	<div class="clear"></div>
+    {if $page.next}
+    <div id="getmorediv" data-num="{$page.num}" data-next="{$page.next}" data-boundary="{$page.next_boundary}" style="height: 50px; line-height: 50px;text-align: center;font-size: 14px; color: #AAAAAA;cursor: pointer;">加载更多</div>
+    {/if}
+</div>
+
+
+{literal}
+<script language="JavaScript">
+	(function(){
+		//移动/删除照片
+		$(document).ready(function() {
+			$('#albumlist').selectmenu({'width': 150});
+		});
+		$('body').delegate('#selectall', 'click', function(){
+			var checked = $(this).prop('checked');
+			$('#photolist input[type=checkbox]').prop('checked', checked);
+		});
+		$('body').delegate('#photolist input[type=checkbox]', 'click', function(){
+			$('#selectall').prop('checked', false);
+		});
+        $('body').delegate('#movePhoto', 'click', function() {
+	        var len = $('#photolist input[type=checkbox]:checked').length;
+            if (!len) {
+                alert('请先选择要转移的照片。');
+                return;
+            } else if (confirm('确认要移动这' + len + '张照片吗？')) {
+	            var uid = $('#albumdata').data('uid');
+	            var albumid = $('#albumlist').val();
+	            var photoids = new Array();
+	            $('#photolist input[type=checkbox]:checked').each(function() {
+		            var photoid = $(this).closest('.photodiv').data('photoid');
+		            photoids.push({'key': {'uid': uid, 'photoid': photoid}, 'update': albumid});
+	            });
+	            $.post('/rest/photo/item/',
+		            {'method':'PUT', 'put_style':'albumid', 'list': photoids},
+		            function(data, status){
+			            if (data.errno) {
+				            alert(data.error);
+			            } else {
+				            window.location.reload();
+			            }
+		            }, 'json');
+            }
+        });
+		$('body').delegate('#deletePhoto', 'click', function() {
+			var len = $('#photolist input[type=checkbox]:checked').length;
+			if (!len) {
+				alert('请先选择要删除的照片。');
+				return;
+			} else if (confirm('确认要删除这' + len + '张照片吗？')) {
+				var uid = $('#albumdata').data('uid');
+				var photoids = new Array();
+				$('#photolist input[type=checkbox]:checked').each(function() {
+					var photoid = $(this).closest('.photodiv').data('photoid');
+					photoids.push({'key': {'uid': uid, 'photoid': photoid}});
+				});
+				$.post('/rest/photo/item/',
+					{'method':'DELETE', 'list': photoids},
+					function(data, status){
+						if (data.errno) {
+							alert(data.error);
+						} else {
+							window.location.reload();
+						}
+					}, 'json');
+			}
+		});
+	})();
+
+	(function(){
+        //瀑布流显示
+        var cols = 4;
+        var colsHeight = [0, 0, 0, 0];
+        var colsData = [];
+        var getmoring = false;
+        function initOneWaterfallData(photoid, imgwidth, imgheight)
+        {
+            var minh = colsHeight[0];
+            var minindex = 0;
+            for (var i=1; i<cols; ++i) {
+                if (colsHeight[i] < minh) {
+                    minh = colsHeight[i];
+                    minindex = i;
+                }
+            }
+            var photoimgwidth, photoimgheight;
+            if (imgwidth < 240) {
+                photoimgwidth = imgwidth;
+                photoimgheight = imgheight;
+            } else {
+                photoimgwidth = 240;
+                photoimgheight = parseInt(240 * imgheight / imgwidth);
+            }
+            colsData[photoid] = [minindex, photoimgwidth, photoimgheight];
+            colsHeight[minindex] += photoimgheight + 50;
+        }
+        function initWaterfallData()
+        {
+            $('#photolist .photodiv').each(function(){
+	            var minindex = $(this).parent().data('col');
+	            var width = $(this).data('imgwidth');
+	            var height = $(this).data('imgheight');
+	            var photoid = $(this).data('photoid');
+	            colsData[photoid] = [minindex, width, height];
+            });
+	        for (var i=0; i<cols; ++i) {
+		        colsHeight[i] = $('#photolist_col' + i).height();
+	        }
+        }
+        function getMorePhoto() {
+            var next = parseInt($('#getmorediv').data('next'));
+            if (next && !getmoring) {
+                var uid = $('#albumdata').data('uid');
+                var albumid = $('#albumdata').data('albumid');
+                var isrecycle = parseInt($('#albumdata').data('isrecycle'));
+                var boundary = $('#getmorediv').data('boundary');
+	            var num = $('#getmorediv').data('num');
+                getmoring = true;
+                $.get('/rest/photo/item/',
+                    {'page':{'mode': 'sequential', 'boundary': boundary, 'num': num}, 'filter': {'uid': uid, 'albumid': albumid}},
+                    function(data, status){
+                        if (data.errno) {
+                            alert(data.error);
+                        } else {
+                            if (!data.data.page.next) {
+                                $('#getmorediv').hide();
+                                $('#getmorediv').data('next', data.data.page.next);
+                            } else {
+                                $('#getmorediv').data('boundary', data.data.page.next_boundary);
+                            }
+
+                            $.each(data.data.list, function(i, n){
+                                initOneWaterfallData(n.photoid, n.size.width, n.size.height);
+                            });
+
+                            $.each(data.data.list, function(i, n){
+                                var photodiv = $('#photolist .photodiv:first').clone();
+                                photodiv.data('photoid', n.photoid);
+                                photodiv.data('imgwidth', n.size.width);
+                                photodiv.data('imgheight', n.size.height);
+
+	                            photodiv.find('input[type=checkbox]').prop('checked', false);
+                                photodiv.find('.photoimgdiv').css('height', colsData[n.photoid][2] + 'px');
+                                photodiv.find('.imagelink').attr('href', 'item?uid=' + n.uid + '&photoid=' + n.photoid);
+                                photodiv.find('.image').attr('src', n.image);
+                                photodiv.find('.txtPhototitle').text(n.title);
+                                photodiv.find('.inputPhototitle input').val(n.title);
+                                $('#photolist_col' + colsData[n.photoid][0]).append(photodiv);
+	                            $('#selectall').prop('checked', false);
+                            });
+                        }
+                        getmoring = false;
+                    }, 'json');
+            }
+        }
+        $(document).ready(function() {
+            initWaterfallData();
+        });
+        $(window).scroll(function(){
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                getMorePhoto();
+            }
+        });
+        $('body').delegate('#getmorediv', 'click', function(){
+            getMorePhoto();
+        });
+    })();
+
+    (function(){
+        //修改相册标题
+        function saveTitle() {
+            var oldVal = $('#txtAlbumtitle').text();
+            var newVal = $('#inputAlbumtitle input').val();
+            if (oldVal != newVal && '' != newVal) {
+                var uid = $('#albumdata').data('uid');
+                var albumid = $('#albumdata').data('albumid');
+                $.post('/rest/photo/album/' + uid + '_' + albumid,
+                        {'method':'PUT', 'put_style':'title', 'update': newVal},
+                        function(data, status){
+                            if (data.errno) {
+                                alert(data.error);
+                            } else {
+                                $('#txtAlbumtitle').text(newVal);
+                                $('#txtAlbumtitle').show();
+                                $('#inputAlbumtitle').hide();
+                            }
+                        }, 'json');
+            } else {
+                $('#txtAlbumtitle').show();
+                $('#inputAlbumtitle').hide();
+            }
+        }
+	    if ($('#inputAlbumtitle').length) {
+		    $('body').delegate('#txtAlbumtitle', 'mouseover', function(){
+			    $('#txtAlbumtitle').hide();
+			    $('#inputAlbumtitle').show();
+			    $('#inputAlbumtitle input').focus();
+		    });
+		    $('body').delegate('#inputAlbumtitle', 'mouseout', function(){
+			    saveTitle();
+		    });
+		    $('body').delegate('#inputAlbumtitle', 'keydown', function(e){
+			    if (13 == e.keyCode) {
+				    saveTitle();
+			    } else if (27 == e.keyCode) {
+				    $('#txtAlbumtitle').show();
+				    $('#inputAlbumtitle').hide();
+				    $('#inputAlbumtitle input').val($('#txtAlbumtitle').text());
+			    }
+		    });
+	    }
+    })();
+
+    (function(){
+        //修改照片标题
+        function savePhotoTitle(root) {
+            var oldVal = root.find('.txtPhototitle').text();
+            var newVal = root.find('.inputPhototitle input').val();
+            if (oldVal != newVal && '' != newVal) {
+                var uid = $('#albumdata').data('uid');
+                var photoid = root.data('photoid');
+                $.post('/rest/photo/item/' + uid + '_' + photoid,
+                        {'method':'PUT', 'put_style':'title', 'update': newVal},
+                        function(data, status){
+                            if (data.errno) {
+                                alert(data.error);
+                            } else {
+                                root.find('.txtPhototitle').text(newVal);
+                                root.find('.txtPhototitle').show();
+                                root.find('.inputPhototitle').hide();
+                                var imgdomain = $('#globaldata').data('imgdomain')
+                                root.find('.photoeditdiv img').attr('src', 'http://' + imgdomain + '/edit.png');
+                            }
+                        }, 'json');
+            } else {
+                root.find('.txtPhototitle').show();
+                root.find('.inputPhototitle').hide();
+                var imgdomain = $('#globaldata').data('imgdomain')
+                root.find('.photoeditdiv img').attr('src', 'http://' + imgdomain + '/edit.png');
+            }
+        }
+	    if ($('.inputPhototitle').length) {
+		    $('body').delegate('#photolist .inputPhototitle', 'keydown', function(e){
+			    var root = $(this).closest('.photodiv');
+			    if (13 == e.keyCode) {
+				    savePhotoTitle(root);
+			    } else if (27 == e.keyCode) {
+				    root.find('.txtPhototitle').show();
+				    root.find('.inputPhototitle').hide();
+				    root.find('.inputPhototitle input').val(root.find('.txtPhototitle').text());
+                    var imgdomain = $('#globaldata').data('imgdomain')
+                    root.find('.photoeditdiv img').attr('src', 'http://' + imgdomain + '/edit.png');
+			    }
+            });
+            $('body').delegate('#photolist .photoeditdiv', 'click', function(){
+                var root = $(this).closest('.photodiv');
+	            if (root.find('.txtPhototitle').is(':visible')) {
+		            root.find('.txtPhototitle').hide();
+		            root.find('.inputPhototitle').show();
+		            root.find('.inputPhototitle input').focus();
+		            var imgdomain = $('#globaldata').data('imgdomain')
+		            $(this).find('img').attr('src', 'http://' + imgdomain + '/ok.png');
+	            } else {
+		            savePhotoTitle(root);
+	            }
+		    });
+	    }
+    })();
+
+    (function(){
+        //上传图片
+        $(document).ready(function() {
+	        var albumid = $('#albumdata').data('albumid');
+	        var pos = 0;
+	        var lasttime = 0;
+	        var lastloaded = 0;
+            var uploaderConfig = {
+                browse_button: 'btnAddPhoto',
+                url: '/rest/photo/item/',
+                multi_selection: true,
+                multipart_params: {
+                    'post_style': 'album',
+                    'update': albumid,
+                    'after_style': 'default',
+                    'after_decorate': 'imageView2/2/w/150/h/150'
+                },
+                filters: {
+                    mime_types: [{'title': '图片文件', 'extensions': 'jpg,gif,png,jpeg'}],
+                    max_file_size: '50mb'
+                },
+                init: {
+                    FilesAdded: function (up, files) {
+                        plupload.each(files, function(file) {
+	                        var photodiv = $('#photolist .photodiv:first').clone();
+	                        photodiv.attr('id', file.id);
+	                        photodiv.data('photoid', 0);
+	                        photodiv.data('imgwidth', 0);
+	                        photodiv.data('imgheight', 0);
+	                        photodiv.find('.photoimgdiv').css('height', '240px');
+	                        photodiv.find('.photoimgdiv').html('');
+	                        photodiv.find('.photocheckdiv').html('&nbsp;');
+                            photodiv.find('.phototxtdiv').text('等待上传中...');
+                            photodiv.find('.photoeditdiv').html('&nbsp;');
+	                        $('#photolist_col' + (pos % 4)).prepend(photodiv);
+	                        pos ++;
+
+                            if ('image/gif' == file.type) {
+                                var img = new mOxie.FileReader();
+                                img.onload = function() {
+                                    $('#photolist [id=' + file.id + '] .photoimgdiv').html('<img src="' + img.result + '" width="240px" height="240px">');
+                                    img.destroy();
+                                    img = null;
+                                };
+                                img.readAsDataURL(file.getSource());
+                            } else {
+                                var img = new mOxie.Image();
+                                img.onload = function() {
+                                    var width = img.width;
+                                    var height = img.height;
+                                    if (width > 240) {
+	                                    height = height * 240 / width;
+	                                    width = 240;
+                                        img.downsize(width, height);
+                                    }
+	                                $('#photolist [id=' + file.id + '] .photoimgdiv').css('height', height + 'px');
+                                    $('#photolist [id=' + file.id + '] .photoimgdiv').html('<img src="' + img.getAsDataURL() + '" width="' + width + 'px" height="' + height + 'px">');
+                                    img.destroy();
+                                    img = null;
+                                };
+                                img.load(file.getSource());
+                            }
+                        });
+                        up.start();
+                    },
+	                BeforeUpload: function (up, file) {
+		                var time = new Date();
+		                time = time.getTime();
+		                lasttime = time;
+		                lastloaded = 0;
+	                },
+                    UploadProgress: function (up, file) {
+	                    var time = new Date();
+	                    time = time.getTime();
+	                    var speed = (file.loaded - lastloaded) / (time - lasttime) * 1.024;
+                        $('#photolist [id=' + file.id + '] .phototxtdiv').text(file.percent + '% - ' + Math.round(speed, 2) + 'K/s');
+	                    lasttime = time;
+	                    lastloaded = file.loaded;
+                    },
+                    FileUploaded: function (up, file, info) {
+                        eval('var data = ' + info.response);
+                        if (data.errno) {
+                            alert(data.error);
+                        } else {
+                            $('#photolist [id=' + file.id + '] .photoimgdiv img').attr('src', data.data.after.image);
+                            $('#photolist [id=' + file.id + '] .phototxtdiv').text(data.data.after.title);
+                        }
+                    },
+                    UploadComplete: function (up, files) {
+                        var uid = $('#albumdata').data('uid');
+                        window.location.href = '?uid=' + uid + '&albumid=' + albumid;
+                    },
+                    Error: function (up, err) {
+                        //alert("Error #" + err.code + ": " + err.message + "\n");
+                    }
+                }
+            };
+            var btnUploader = new plupload.Uploader(uploaderConfig);
+            btnUploader.init();
+        });
+    })();
+</script>
+{/literal}
