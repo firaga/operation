@@ -1,7 +1,7 @@
 <?php
-Ko_Web_Route::VGet('index', function()
-{
-echo "hee";
+Ko_Web_Route::VGet('index', function() {
+	$render = new KRender_passport();
+	$render->oSetTemplate('passport/user/login.html')->oSend();
 });
 
 Ko_Web_Route::VGet('reg', function()
