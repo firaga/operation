@@ -1,69 +1,44 @@
 <?php
-
-class KUser_loginApi extends Ko_Mode_User
-{
-	const SESSION_TOKEN_NAME = 's';
-	const PERSISTENT_TOKEN_NAME = 'p';
-
+/**
+ * Created by JetBrains PhpStorm.
+ * User: Jichen Zhou
+ * Date: 2015年12月14日
+ * Time: 下午6:22
+ */
+class KUser_loginApi extends Ko_Mode_Item{
 	protected $_aConf = array(
-		'username' => 'username',
-		'bindlog' => 'bindlog',
-		'hashpass' => 'hashpass',
-		'varsalt' => 'varsalt',
-		'persistent' => 'persistent',
-		'persistent_strict' => false,
+			'item' => 'user',
 	);
-
-	public function iGetLoginUid(&$exinfo = '')
-	{
-		static $s_iUid;
-		if (is_null($s_iUid)) {
-			$token = Ko_Web_Request::SCookie(self::SESSION_TOKEN_NAME);
-			$s_iUid = $token ? $this->iCheckSessionToken($token, $exinfo, $iErrno) : 0;
-			if (!$s_iUid) {
-				$token = Ko_Web_Request::SCookie(self::PERSISTENT_TOKEN_NAME);
-				$s_iUid = $token ? $this->iCheckPersistentToken($token, $newtoken, $iErrno) : 0;
-				if ($s_iUid) {
-					Ko_Web_Response::VSetCookie(self::PERSISTENT_TOKEN_NAME, $newtoken, time() + 2592000, '/', '.' . MAIN_DOMAIN);
-				}
-			}
-			if ($s_iUid) {
-				$token = $s_iUid ? $this->sGetSessionToken($s_iUid, $exinfo) : '';
-				Ko_Web_Response::VSetCookie(self::SESSION_TOKEN_NAME, $token, 0, '/', '.' . MAIN_DOMAIN);
-			}
-		}
-		return $s_iUid;
-	}
-
-	public function vSetLoginUid($uid, $exinfo = '')
-	{
-		$token = $uid ? $this->sGetSessionToken($uid, $exinfo) : '';
-		Ko_Web_Response::VSetCookie(self::SESSION_TOKEN_NAME, $token, 0, '/', '.' . MAIN_DOMAIN);
-
-		$token = $uid ? $this->sGetPersistentToken($uid) : '';
-		Ko_Web_Response::VSetCookie(self::PERSISTENT_TOKEN_NAME, $token, time() + 2592000, '/', '.' . MAIN_DOMAIN);
-	}
-
-	public function iOauth2Login($sSrc)
-	{
-		$aTokeninfo = $this->oauth2_Api->aGetTokenInfo($sSrc);
-		if (!$this->oauth2_Api->bGetUserinfoByTokeninfo($sSrc, $aTokeninfo, $sUsername, $aUserinfo)) {
+	const ERRNO_UNREGISTERED=1;
+	const ERRNO_PASSWD=2;
+	public function iLogin($sUsername,$sPasswd,&$iErrNo=0) {
+		if(!$aUserInfo=$this->aIsRegistered($sUsername)){
+			$iErrNo=self::ERRNO_UNREGISTERED;
 			return 0;
 		}
-		$uid = $this->_iGetExternalUid($sUsername, $sSrc);
-		if ($uid) {
-			$this->oauth2_Api->bSaveUserToken($sSrc, $uid, $aTokeninfo);
-			$this->baseinfoApi->bUpdateOauth2info($uid, $aUserinfo);
+		if(md5($aUserInfo['salt'].'_'.$sPasswd)!=$aUserInfo['passwd']){
+			$iErrNo=self::ERRNO_UNREGISTERED;
+			return 0;
 		}
-		return $uid;
+		//setcookie
+		return $aUserInfo['id'];
 	}
 
-	private function _iGetExternalUid($sUsername, $sSrc)
-	{
-		$uid = $this->iRegisterExternal($sUsername, $sSrc, $iErrno);
-		if (!$uid && Ko_Mode_User::E_REGISTER_ALREADY == $iErrno) {
-			$uid = $this->iIsRegister($sUsername, $sSrc);
-		}
-		return $uid;
+	public function aIsRegistered($aUsername){
+		$aOption = new Ko_Tool_SQL();
+		$aOption->oWhere(array('username'=>$aUsername));
+		$aList=$this->aGetList($aOption,1000);
+		return $aList[0];
+	}
+
+	public function bRegister($sUsername,$sPasswd,&$iErrNo=0) {
+		$sSalt=rand(1000,9999);
+		$aData=array(
+				'username'=>$sUsername,
+				'passwd'=>md5($sSalt.'_'.$sPasswd),
+				'salt'=>$sSalt,
+		);
+		$iUid=$this->iInsert($aData);
+		return !!$iUid;
 	}
 }
