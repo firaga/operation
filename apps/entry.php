@@ -6,7 +6,7 @@ define('MAIN_DOMAIN', 'imfw.cn');
 define('WWW_DOMAIN', 'www.' . MAIN_DOMAIN);
 define('PASSPORT_DOMAIN', 'passport.' . MAIN_DOMAIN);
 define('XHPROF_DOMAIN', 'xhprof.' . MAIN_DOMAIN);
-define('IMG_DOMAIN', 'operation.main.imfw.cn/static');
+define('IMG_DOMAIN', 'operation.main.imfw.cn/');
 
 define('CODE_ROOT', '/srv/htdocs/');
 define('COMMON_CLASS_PATH', CODE_ROOT . 'apps/include/');

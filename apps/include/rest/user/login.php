@@ -1,22 +1,22 @@
 <?php
 
-class KRest_User_login
-{
+class KRest_User_login {
 	public static $s_aConf = array(
-		'unique' => 'int',
-		'stylelist' => array(
+		'unique'          => 'int',
+		'stylelist'       => array(
 			'default' => 'int',
 		),
-		'poststylelist' => array(
-			'default' => array('hash', array(
-				'username' => 'string',
-				'passwd' => 'string',
-			)),
+		'poststylelist'   => array(
+			'default' => array(
+				'hash', array(
+					'username' => 'string',
+					'passwd'   => 'string',
+				)
+			),
 		),
 	);
 
-	public function post($update, $after = null)
-	{
+	public function post($update, $after = null) {
 		$api = new KUser_loginApi();
 		$uid = $api->iLogin($update['username'], $update['passwd'], $errno);
 		if (!$uid) {
@@ -32,8 +32,7 @@ class KRest_User_login
 		return array('key' => $uid);
 	}
 
-	public function delete($id, $before = null)
-	{
+	public function delete($id, $before = null) {
 		$api = new KUser_loginApi();
 		$api->vSetLoginUid(0);
 		return array('key' => $id);
