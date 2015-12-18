@@ -1,6 +1,6 @@
 <?php
 
-class KUser_loginApi extends Ko_Mode_User
+class KUser_loginOldApi extends Ko_Mode_User
 {
 	const SESSION_TOKEN_NAME = 's';
 	const PERSISTENT_TOKEN_NAME = 'p';
