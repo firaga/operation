@@ -12,6 +12,7 @@ class KUser_loginApi extends Ko_Mode_Item {
 	);
 	const ERRNO_UNREGISTERED = 1;
 	const ERRNO_PASSWD = 2;
+	const ERRNO_REGISTERED = 3;
 
 	public function iLogin($sUsername, $sPasswd, &$iErrNo = 0) {
 		if (!$aUserInfo = $this->aIsRegistered($sUsername)) {
@@ -19,7 +20,7 @@ class KUser_loginApi extends Ko_Mode_Item {
 			return 0;
 		}
 		if (md5($aUserInfo['salt'] . '_' . $sPasswd) != $aUserInfo['passwd']) {
-			$iErrNo = self::ERRNO_UNREGISTERED;
+			$iErrNo = self::ERRNO_PASSWD;
 			return 0;
 		}
 		//setcookie
@@ -27,22 +28,29 @@ class KUser_loginApi extends Ko_Mode_Item {
 		return $aUserInfo['id'];
 	}
 
-	public function aIsRegistered($aUsername) {
+	public function aIsRegistered($sUsername) {
 		$aOption = new Ko_Tool_SQL();
-		$aOption->oWhere(array('username' => $aUsername));
-		$aList = $this->aGetList($aOption, 1000);
+		$aOption->oWhere('username=?',$sUsername);
+		$aOption->oOffset(0)->oLimit(1);
+		$aList = $this->aGetList($aOption);
 		return $aList[0];
 	}
 
-	public function bRegister($sUsername, $sPasswd, &$iErrNo = 0) {
+	public function iRegister($sUsername, $sPasswd, &$iErrNo = 0) {
+		if ($aUserInfo = $this->aIsRegistered($sUsername)) {
+			$iErrNo = self::ERRNO_REGISTERED;
+			return 0;
+		}
 		$sSalt = rand(1000, 9999);
 		$aData = array(
 			'username' => $sUsername,
 			'passwd'   => md5($sSalt . '_' . $sPasswd),
 			'salt'     => $sSalt,
 		);
+		var_dump($aData);
 		$iUid = $this->iInsert($aData);
-		return !!$iUid;
+		var_dump($iUid);
+		return $iUid;
 	}
 
 	public function iGetLoginUid() {
