@@ -1,22 +1,52 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Jichen Zhou
- * Date: 2015年12月14日
- * Time: 下午7:09
- */
-class KUser_Dao extends Ko_Dao_Factory {
-	public $_aDaoConf = array(
-		'redis'  => array(
-			'type' => 'redis'
-		),
-		'mcache' => array(
-			'type' => 'mcache',
-		),
-		'user'   => array(
+
+class KUser_Dao extends Ko_Dao_Factory
+{
+	protected $_aDaoConf = array(
+		'username' => array(
 			'type' => 'db_single',
-			'kind' => 'opr_user',
-			'key'  => 'id',
+			'kind' => 'opr_user_username',
+			'key' => array('username', 'src'),
 		),
+		/*'bindlog' => array(
+			'type' => 'db_single',
+			'kind' => 'user_bindlog',
+			'key' => 'uid',
+		),*/
+		'hashpass' => array(
+			'type' => 'db_single',
+			'kind' => 'opr_user_hashpass',
+			'key' => 'uid',
+		),
+		'varsalt' => array(
+			'type' => 'db_single',
+			'kind' => 'opr_user_varsalt',
+			'key' => 'uid',
+		),
+	    'user' => array(
+		    'type' => 'db_single',
+		    'kind' => 'opr_user',
+		    'key' => 'id',
+	    ),
+		/*'persistent' => array(
+			'type' => 'db_single',
+			'kind' => 'user_cookie',
+			'key' => array('uid', 'series'),
+		),
+		'changelog' => array(
+			'type' => 'db_single',
+			'kind' => 'user_changelog',
+			'key' => 'id',
+		),
+		'baseinfo' => array(
+			'type' => 'db_single',
+			'kind' => 'user_baseinfo',
+			'key' => 'uid',
+		),
+		'uuid' => array(
+			'type' => 'db_single',
+			'kind' => 'user_uuid',
+			'key' => 'uuid',
+		),*/
 	);
 }

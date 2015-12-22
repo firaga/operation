@@ -35,6 +35,8 @@ class KRest_User_login {
 				}
 				throw new Exception('登录失败，请重试', 2);
 			}
+			$userApi=new KUser_userApi();
+			$userApi->doAfterLogin($uid);
 		}elseif($post_style=='register'){
 			$userApi=new KUser_userApi();
 			$insert=array(

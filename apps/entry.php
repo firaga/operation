@@ -2,9 +2,9 @@
 
 error_reporting(E_ALL^E_NOTICE);
 
-define('MAIN_DOMAIN', 'imfw.cn');
-define('WWW_DOMAIN', 'www.' . MAIN_DOMAIN);
-define('PASSPORT_DOMAIN', 'passport.' . MAIN_DOMAIN);
+define('MAIN_DOMAIN', 'operation.main.imfw.cn');
+define('WWW_DOMAIN',  MAIN_DOMAIN);
+define('PASSPORT_DOMAIN',  MAIN_DOMAIN);
 define('XHPROF_DOMAIN', 'xhprof.' . MAIN_DOMAIN);
 define('IMG_DOMAIN', 'operation.main.imfw.cn/images');
 
