@@ -57,13 +57,14 @@ class KUser_userApi extends Ko_Mode_Item {
 		$tokenuid = $userLoginApi->ICheckSessionToken($_COOKIE ['admintoken'], $sExinfo, $iErrno);
 		if ($tokenuid)
 		{
-			if(!self::loginAdminAuth($tokenuid)) {
+			if(!$this->doAfterLogin($tokenuid)) {
 				//锁定
 				return false;
 			}
 		}else{
 			return false;
 		}
+		return true;
 	}
 
 }

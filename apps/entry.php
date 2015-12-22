@@ -56,6 +56,10 @@ Ko_Web_Event::On('ko.config', 'after', function () {
 			exit;
 		}
 	}
+	$hooks = COMMON_CLASS_PATH.'hooks/'.$appname.'.php';
+	if (is_file($hooks)) {
+		require_once($hooks);
+	}
 });
 
 Ko_Web_Event::On('ko.error', '500', function ($errno, $errstr, $errfile, $errline, $errcontext) {
@@ -66,6 +70,7 @@ Ko_Web_Event::On('ko.error', '500', function ($errno, $errstr, $errfile, $errlin
 Ko_Web_Event::On('ko.dispatch', 'before', function () {
 	Ko_Tool_Adapter::VOn('user_baseinfo', array('KUser_baseinfoApi', 'AAdapter'));
 	Ko_Tool_Adapter::VOn('image_baseinfo', array('KStorage_Api', 'AAdapter'));
+	$uri = Ko_Web_Request::SRequestUri();
 	$appname = Ko_Web_Config::SGetAppName();
 	if ('zc' === $appname) {
 		$_GET['uid'] = 20;
