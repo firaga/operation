@@ -44,3 +44,23 @@ CREATE  TABLE opr_user_authority(
   mid int NOT NULL DEFAULT 0
 ) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+
+CREATE TABLE opr_user_username(
+  username varchar(128) not null default '',
+  src varchar(32) not null default '',
+  uid bigint UNSIGNED not null default 0,
+  unique (username, src)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE opr_user_hashpass(
+  uid bigint UNSIGNED not null default 0,
+  salt varchar(64) not null default '',
+  hash varchar(64) not null default '',
+  unique (uid)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE opr_user_varsalt(
+  uid bigint UNSIGNED not null default 0,
+  salt varchar(64) not null default '',
+  oldsalt varchar(64) not null default '',
+  mtime timestamp NOT NULL default 0,
+  unique (uid)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

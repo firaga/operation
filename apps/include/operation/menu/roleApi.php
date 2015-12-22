@@ -5,7 +5,7 @@
  * Date: 2015年12月3日
  * Time: 下午7:42
  */
-class KMenu_roleApi extends Ko_Mode_Item{
+class KOperation_Menu_roleApi extends Ko_Mode_Item{
 	const FLAG_NORMAL=1;
 	const FLAG_DELETE=-1;
 	public static $flagStatus=array(

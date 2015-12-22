@@ -27,16 +27,24 @@ class KRest_User_login {
 		if($post_style=='default'){
 			$uid = $api->iLogin($update['username'], $update['passwd'], $errno);
 			if (!$uid) {
-				if (1 == $errno) {
+				if (Ko_Mode_User::E_LOGIN_USER == $errno) {
 					throw new Exception('用户名不存在', 1);
 				}
-				if (2  == $errno) {
+				if (Ko_Mode_User::E_LOGIN_PASS == $errno) {
 					throw new Exception('密码错误', 2);
 				}
 				throw new Exception('登录失败，请重试', 2);
 			}
 		}elseif($post_style=='register'){
-			$uid = $api->iRegister($update['username'], $update['passwd'], $errno);
+			$userApi=new KUser_userApi();
+			$insert=array(
+				'username'=>$update['username'],
+			);
+			$uid=$userApi->addUser($insert);
+			if(!$uid){
+				throw new Exception('注册失败,请重试');
+			}
+			$ret = $api->bRegisterUid($uid,$update['username'], $update['passwd'], $errno);
 			if(!$uid){
 				switch($errno){
 					case 3:
