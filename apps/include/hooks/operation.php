@@ -11,7 +11,7 @@ Ko_Web_Event::On ('ko.dispatch', 'before', function () {
 	$userApi=new KUser_userApi();
 	if($uri=='/user/login/index'){
 		echo "hook logout".chr(10);
-		$userApi->logoutAdminAuth();
+//		$userApi->logoutAdminAuth();
 	}elseif($uri=='/rest/user/login/'){
 
 	}else{
