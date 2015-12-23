@@ -1,14 +1,11 @@
 <?php
-
 Ko_Web_Route::VGet('index', function () {
 	$msg = 'hello world!';
 	$render = new KRender_web;
 	$render->oSetTemplate('operation/index.html')
-		->oSetData('msg', $msg)
+//		->oSetData('msg', $msg)
 		->oSend();
 	//var_dump(debug_backtrace());
-	echo "index";
-	var_dump($_SESSION);
 	//$userApi=new KUser_userApi();
 	//$res=$userApi->checkLogin();
 });

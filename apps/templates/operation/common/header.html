@@ -2,26 +2,83 @@
 <html>
 <head>
     <title>Ko Demo</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link href="http://{$IMG_DOMAIN}/css/reset.css" rel="stylesheet">
-    <link href="http://{$IMG_DOMAIN}/js/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+    {*<link href="http://{$IMG_DOMAIN}/js/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">*}
     <link href="http://{$IMG_DOMAIN}/css/base.css" rel="stylesheet">
     <script src="http://{$IMG_DOMAIN}/js/jquery-1.11.2.min.js"></script>
     <script src="http://{$IMG_DOMAIN}/js/bootstrap/bootstrap.js"></script>
-    <link href="http://{$IMG_DOMAIN}/css/bootstrap/bootstrap.css" rel="stylesheet">
+    {*<link href="http://{$IMG_DOMAIN}/css/bootstrap/bootstrap.css" rel="stylesheet">*}
     <link href="http://{$IMG_DOMAIN}/css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+
+    <link href="http://{$IMG_DOMAIN}/css/metronic/style.css" rel="stylesheet" type="text/css"/>
+    <link href="http://{$IMG_DOMAIN}/css/metronic/style-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="http://{$IMG_DOMAIN}/css/metronic/default.css" rel="stylesheet" type="text/css"/>
+    <link href="http://{$IMG_DOMAIN}/css/metronic/uniform.default.css" rel="stylesheet" type="text/css"/>
+    <link href="http://{$IMG_DOMAIN}/css/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="http://{$IMG_DOMAIN}/css/metronic/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="http://{$IMG_DOMAIN}/css/metronic/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+    <link href="http://{$IMG_DOMAIN}/css/metronic/bootstrap-fileupload.css" rel="stylesheet" type="text/css"/>
+    <link href="http://{$IMG_DOMAIN}/css/metronic/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    {literal}
+    <style type="text/css">
+        html, body {width:100%;height:100%;}
+        .page-container {height: 100%!important;}
+        .page-content {height: 100%!important;}
+        </style>
+    {/literal}
 </head>
-<body>
-<div id="globaldata" class="hide"
-     data-wwwdomain="{$WWW_DOMAIN}"
-     data-passportdomain="{$PASSPORT_DOMAIN}"
-     data-imgdomain="{$IMG_DOMAIN}"
-     data-uid="{$logininfo.uid}">
-</div>
-<header>
-    <div style="float: right;width: 150px;">
-        <a href="http://{$PASSPORT_DOMAIN}/user/login">登录</a>
-        <a href="http://{$PASSPORT_DOMAIN}/user/reg">注册</a>
+<body class="page-header-fixed page-footer-fixed page-sidebar-fixed">
+<div class="header navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="/">社区管理后台</a>
+            <ul class="nav">
+                <li class="dropdown user">
+                    <a href="#" class="dropdown-toggle">系统设置</a>
+                </li>
+                <li class="dropdown user">
+                    <a href="#" class="dropdown-toggle">系统设置</a>
+                </li>
+                {foreach $__top_menus as $menu_id => $item}
+                    {if $menu_id == 1 && $is_super == 0}
+                        {continue}
+                    {/if}
+                    <li class="dropdown user">
+                        <a href="{$item.url}" class="dropdown-toggle">{$item.text}</a>
+                    </li>
+                {/foreach}
+            </ul>
+            <ul class="nav pull-right">
+                <li class="dropdown user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="username">管理员{$__user.name}</span>
+                        <i class="icon-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://www.mafengwo.cn/home/userpass.php" target="_blank"><i class="icon-lock"></i>修改密码</a>
+                        </li>
+                        <li><a href="http://admin.mafengwo.cn/settings/user.php/logout"><i class="icon-key"></i>退出登录</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="clear"></div>
-</header>
+</div>
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse">
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 712px;">
+            <ul class="page-sidebar-menu" style="overflow: hidden; width: auto; height: 712px;">
+                <li class="active"><a href="/system/menu.php"><span class="title">导航管理</span><span
+                                class="selected"></span></a></li>
+                <li class=""><a href="/system/role.php"><span class="title">角色管理</span></a></li>
+                <li class=""><a href="/system/role_user.php/userrole"><span class="title">用户权限查询</span></a></li>
+            </ul>
+            <div class="slimScrollBar ui-draggable"
+                 style="width: 7px; position: absolute; top: 0px; opacity: 0.3; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 712px; background: rgb(161, 178, 189);"></div>
+            <div class="slimScrollRail"
+                 style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+        </div>
+    </div>

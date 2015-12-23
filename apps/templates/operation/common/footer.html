@@ -1,17 +1,38 @@
-
-<footer>
-    <div>
-        &copy;2015 Your Company 
+</div>
+<div class="footer">
+    <div class="footer-inner">{$smarty.now|date_format:'%Y'} &copy; Mafengwo.com</div>
+    <div class="footer-tools">
+        <span class="go-top"><i class="icon-angle-up"></i></span>
     </div>
-</footer>
-
-<script src="http://{$IMG_DOMAIN}/js/jquery-ui-1.11.4/jquery-ui.js"></script>
-<script src="http://{$IMG_DOMAIN}/js/tinymce-4.1.9-jquery/tinymce.min.js"></script>
-<script src="http://{$IMG_DOMAIN}/js/tinymce-4.1.9-jquery/jquery.tinymce.min.js"></script>
-<script src="http://{$IMG_DOMAIN}/js/plupload-2.1.2/js/plupload.full.min.js"></script>
-<script src="http://{$IMG_DOMAIN}/js/plupload-2.1.2/js/i18n/zh_CN.js"></script>
-
-<script src="http://{$IMG_DOMAIN}/js/base.js"></script>
-
+</div>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/metronic/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/metronic/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/metronic/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/metronic/jquery.blockui.min.js"></script>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/metronic/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/metronic/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/widget/alerts.js"></script>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/admin.app.js"></script>
+<script>
+    var d = new Date();
+    $('._j_datepicker').datepicker({
+        numberOfMonths: 1,
+        dateFormat: 'yy-mm-dd',
+        altFormat: 'yy-mm-dd',
+        yearRange: (d.getFullYear() - 1) + ':' + (d.getFullYear() + 1 ),
+        changeYear: true,
+        changeMonth: true,
+        monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+        monthNamesShort: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+        dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+        dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+        dayNamesShort: ['日', '一', '二', '三', '四', '五', '六']
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        App.init();
+    });
+</script>
 </body>
 </html>
