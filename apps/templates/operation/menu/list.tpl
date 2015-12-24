@@ -1,10 +1,12 @@
-<div class="page-content" style="min-height: 712px;">
-    <div class="container-fluid">
-        <h3 class="page-title">系统设置</h3>
-
-        <div class="form-actions">
-            周济晨，欢迎进入蚂蜂窝社区管理中心
-        </div>
+<div class="box">
+    <div class="box-header">
+        <a href="#" class="btn green" id="_j_menu_append">新增导航</a>
+    </div>
+    <div class="box-body" id="_j_menu_nestable">
 
     </div>
 </div>
+<div class="modal hide fade" tabindex="-1" id="_j_menu_edit"></div>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/metronic/bootstrap-modal.js"></script>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/metronic/bootstrap-modalmanager.js"></script>
+<script type="text/javascript" src="http://{$IMG_DOMAIN}/js/plugins/jquery.nestable.js"></script>

@@ -82,3 +82,23 @@
                  style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
         </div>
     </div>
+    <div class="page-content" style="min-height: 712px;">
+        <div class="container-fluid">
+            <h3 class="page-title">{if $__cur_menus.text}{$__cur_menus.text}{else}默认{/if}</h3>
+            {if $__admin_with.error}
+                <div class="alert alert-error">
+                    <button class="close" data-dismiss="alert"></button>{$__admin_with.error}
+                </div>
+            {/if}
+            {if $__admin_with.info}
+                <div class="alert alert-info">
+                    <button class="close" data-dismiss="alert"></button>{$__admin_with.error}
+                </div>
+            {/if}
+            {if $__admin_with.success}
+                <div class="alert alert-success">
+                    <button class="close" data-dismiss="alert"></button>{$__admin_with.success}
+                </div>
+            {/if}
+            {block name="container"}{/block}
+        </div>
