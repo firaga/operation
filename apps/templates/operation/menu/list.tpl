@@ -19,5 +19,11 @@
             });
         };
         resetNestable();
+        $('#_j_menu_append').on('click', function(e) {
+            e.preventDefault();
+            $('#_j_menu_edit').load('menu/edit', '', function() {
+                $('#_j_menu_edit').modal();
+            });
+        });
     });
 </script>

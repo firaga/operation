@@ -55,7 +55,7 @@ Ko_Web_Route::VGet('edit', function () {
 		'info'    => $iId ? $aList[$iId] : array(),
 		'options' => $sMenuOptions,
 	), null, array('options'));
-	echo $this->oGetSmarty()->sFetch('system/menu/edit.tpl');
+	echo $this->oGetSmarty()->sFetch('operation/menu/edit.tpl');
 	exit;
 });
 Ko_Web_Route::VPost('edit', function () {
@@ -103,7 +103,7 @@ Ko_Web_Route::VGet('privacy', function () {
 		'info'      => $aMenu,
 		'tree_list' => implode("\n", $tree_list),
 	), null, array('tree_list'));
-	echo $this->oGetSmarty()->sFetch('system/menu/privacy.tpl');
+	echo $this->oGetSmarty()->sFetch('operation/menu/privacy.tpl');
 	exit;
 });
 Ko_Web_Route::VPost('privacy', function () {
