@@ -38,12 +38,6 @@
         <div class="container-fluid">
             <a class="brand" href="/index/index">运维管理后台</a>
             <ul class="nav">
-                <li class="dropdown user">
-                    <a href="#" class="dropdown-toggle">系统设置</a>
-                </li>
-                <li class="dropdown user">
-                    <a href="#" class="dropdown-toggle">系统设置</a>
-                </li>
                 {foreach $__top_menus as $menu_id => $item}
                     {if $menu_id == 1 && $is_super == 0}
                         {continue}
