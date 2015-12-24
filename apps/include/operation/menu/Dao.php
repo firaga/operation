@@ -16,27 +16,12 @@ class KPhoto_Dao extends Ko_Dao_Factory {
 			),
 			'sqMenu' => array (
 					'type' => 'db_single',
-					'kind' => 'sq_menu',
+					'kind' => 'opr_menu',
 					'key' => 'id',
 			),
 			'sqMenuTree' => array(
 					'type' => 'db_single',
-					'kind' => 'sq_menu_tree',
-					'key' => 'id',
-			),
-			'sqRole' => array(
-					'type' => 'db_single',
-					'kind' => 'sq_role',
-					'key' => 'rid',
-			),
-			'sqUser' => array(
-					'type' => 'db_single',
-					'kind' => 'sq_user',
-					'key' => 'id',
-			),
-			'sqRolePrivacy' => array(
-					'type' => 'db_single',
-					'kind' => 'sq_role_menu_privacy',
+					'kind' => 'opr_menu_tree',
 					'key' => 'id',
 			),
 	);
