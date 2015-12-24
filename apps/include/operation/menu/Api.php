@@ -23,7 +23,7 @@ class KOperation_Menu_Api extends Ko_Busi_Api {
 	}
 
 	public function iDelete($iId) {
-		$oTreeApi = new KShequ_Menu_TreeApi();
+		$oTreeApi = new KOperation_Menu_TreeApi();
 		$aParent = $oTreeApi->aGetParent($iId, 1);
 		$iParentId = empty($aParent) ? 0 : $aParent[0];
 		try {
@@ -38,7 +38,7 @@ class KOperation_Menu_Api extends Ko_Busi_Api {
 	}
 
 	public function iCreate($sText, $sUrl, $iParentId = 0, $iFullScreen = 0) {
-		$oTreeApi = new KShequ_Menu_TreeApi();
+		$oTreeApi = new KOperation_Menu_TreeApi();
 		try {
 			$iId = $this->sqMenuDao->iInsert(array(
 				'text'        => $sText,
@@ -55,7 +55,7 @@ class KOperation_Menu_Api extends Ko_Busi_Api {
 	}
 
 	public function iUpdate($iId, $sText, $sUrl, $iParentId = 0, $iFullScreen = 0) {
-		$oTreeApi = new KShequ_Menu_TreeApi();
+		$oTreeApi = new KOperation_Menu_TreeApi();
 		$aParent = $oTreeApi->aGetParent($iId, 1);
 		$iCurrentParentId = empty($aParent) ? 0 : $aParent[0];
 		try {

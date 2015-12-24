@@ -48,14 +48,16 @@ Ko_Web_Route::VGet('edit', function () {
 	}
 
 	$sMenuOptions = '<option value="0">顶级导航</option>';
-	$sMenuOptions .= $this->_getMenuOptions($iParentId, $aTree, $aList);
+	$sMenuOptions .= _getMenuOptions($iParentId, $aTree, $aList);
 
-	$this->oGetSmarty()->vAssignHtml(array(
-		'title'   => '编辑导航',
-		'info'    => $iId ? $aList[$iId] : array(),
+	$smarty=new Ko_View_Smarty();
+	$smarty->vAssignHtml(array(
+		'title' => '编辑导航',
+		'info' => $iId ? $aList[$iId] : array(),
 		'options' => $sMenuOptions,
 	), null, array('options'));
-	echo $this->oGetSmarty()->sFetch('operation/menu/edit.tpl');
+
+	echo $smarty->sFetch('operation/menu/edit.tpl');
 	exit;
 });
 Ko_Web_Route::VPost('edit', function () {
@@ -64,8 +66,9 @@ Ko_Web_Route::VPost('edit', function () {
 	$iParentId = Ko_Web_Request::IInput("parentid");
 	$iMode = Ko_Web_Request::IInput("mode");
 	$iId = Ko_Web_Request::IInput("id");
+
 	$oApi = new KOperation_Menu_Api();
-	if (!in_array($_SESSION['admin']['uid'], KShequ_Conf::$super_users)) {
+	if (!in_array($_SESSION['admin']['id'], KOperation_Conf::$super_users)) {
 		KAdmin_Helper::vOutput(0);
 	} else {
 		KAdmin_Helper::vOutput(
@@ -98,12 +101,13 @@ Ko_Web_Route::VGet('privacy', function () {
 		$split++;
 	}
 
-	$this->oGetSmarty()->vAssignHtml(array(
+	$smarty=new Ko_View_Smarty();
+	$smarty->vAssignHtml(array(
 		'title'     => '权限管理',
 		'info'      => $aMenu,
 		'tree_list' => implode("\n", $tree_list),
 	), null, array('tree_list'));
-	echo $this->oGetSmarty()->sFetch('operation/menu/privacy.tpl');
+	echo $smarty->sFetch('operation/menu/privacy.tpl');
 	exit;
 });
 Ko_Web_Route::VPost('privacy', function () {

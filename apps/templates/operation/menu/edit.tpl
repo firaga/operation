@@ -1,4 +1,4 @@
-{extends file="common/modal.tpl"}
+{extends file="operation/common/modal.tpl"}
 {block name="container"}
     <div class="form-horizontal" data-id="{$info.id}">
         <div class="control-group">
@@ -31,4 +31,7 @@
             </div>
         </div>
     </div>
+{/block}
+{block name="buttons"}
+    <button type="button" class="btn blue" data-key="confirm">确定?</button>
 {/block}
