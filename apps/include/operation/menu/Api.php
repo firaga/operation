@@ -6,7 +6,11 @@ class KOperation_Menu_Api extends Ko_Busi_Api
 
 	public function aGetAll()
 	{
-		$ret = $this->mcacheDao->vGet(self::MC_ALL_MENU);
+		try{
+			$ret = $this->mcacheDao->vGet(self::MC_ALL_MENU);
+		}catch(Exception $e){
+			var_dump($e);
+		}
 		if ($ret)
 		{
 			return Ko_Tool_Enc::ADecode($ret);

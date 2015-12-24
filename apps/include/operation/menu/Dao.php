@@ -6,7 +6,7 @@
  * Date: 2015年12月3日
  * Time: 下午7:40
  */
-class KPhoto_Dao extends Ko_Dao_Factory {
+class KOperation_Menu_Dao extends Ko_Dao_Factory {
 	protected $_aDaoConf = array (
 			'redis' => array (
 					'type' => 'redis'

@@ -19,7 +19,7 @@ Ko_Web_Route::VGet('getTree', function () {
 	$aList = $oApi->aGetAll();
 	$aTree = $oTreeApi->aGetChild(0, 0);
 
-	$sMenuTree = $this->_getMenuTree($aTree, $aList);
+	$sMenuTree = _getMenuTree($aTree, $aList);
 
 	echo $sMenuTree;
 	exit;
@@ -183,7 +183,7 @@ function _getMenuHtml($menu, $split) {
 }
 
 function _getMenuTree($aTree, $aList, $iLevel = 0) {
-	$is_dev = in_array($_SESSION['admin']['uid'], KShequ_Conf::$super_users);
+	$is_dev = true;
 	$sHTML = '<ol class="dd-list">';
 	foreach ($aTree as $iId => $aSubTree) {
 		$sHTML .= '<li class="dd-item" data-id="' . $iId . '">';
@@ -198,7 +198,7 @@ function _getMenuTree($aTree, $aList, $iLevel = 0) {
 		}
 		$sHTML .= '</span>';
 		$sHTML .= '</div>';
-		$sHTML .= !empty($aSubTree) ? $this->_getMenuTree($aSubTree, $aList, $iLevel + 1) : '';
+		$sHTML .= !empty($aSubTree) ? _getMenuTree($aSubTree, $aList, $iLevel + 1) : '';
 		$sHTML .= '</li>';
 	}
 	$sHTML .= '</ol>';
@@ -217,7 +217,7 @@ function _getMenuOptions($iCurrentId, $aTree, $aList, $sPrefix = '', $iLevel = 0
 			. ($iCurrentId == $iId ? ' selected="true"' : '') . '>';
 		$sCurrentPrefix = $sPrefix . $iCounter . '.';
 		$sHTML .= $sCurrentPrefix . '&nbsp;' . htmlspecialchars($aList[$iId]['text']) . '</option>';
-		$sHTML .= $this->_getMenuOptions($iCurrentId, $aSubTree, $aList, $sCurrentPrefix, $iLevel + 1);
+		$sHTML .= _getMenuOptions($iCurrentId, $aSubTree, $aList, $sCurrentPrefix, $iLevel + 1);
 	}
 	return $sHTML;
 }
