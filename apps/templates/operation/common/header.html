@@ -65,21 +65,19 @@
     </div>
 </div>
 <div class="page-container">
-    <div class="page-sidebar nav-collapse collapse">
-        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 712px;">
-            <ul class="page-sidebar-menu" style="overflow: hidden; width: auto; height: 712px;">
-                <li class="active"><a href="/menu/index"><span class="title">导航管理</span><span
-                                class="selected"></span></a></li>
-                <li class=""><a href="/menu/index"><span class="title">角色管理</span></a></li>
-                <li class=""><a href="/menu/index"><span class="title">用户权限查询</span></a></li>
+    {if intval($__cur_menus.full_screen) == 0 && strlen($__admin_nav) > 0}
+        {$show_nav = 1}
+    {else}
+        {$show_nav = 0}
+    {/if}
+    <div class="page-sidebar nav-collapse collapse"{if !$show_nav} style="display: none;"{/if}>
+        {if $show_nav}
+            <ul class="page-sidebar-menu">
+                {$__admin_nav}
             </ul>
-            <div class="slimScrollBar ui-draggable"
-                 style="width: 7px; position: absolute; top: 0px; opacity: 0.3; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 712px; background: rgb(161, 178, 189);"></div>
-            <div class="slimScrollRail"
-                 style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
-        </div>
+        {/if}
     </div>
-    <div class="page-content" style="min-height: 712px;">
+    <div class="page-content"{if !$show_nav} style="margin-left: 0px;"{/if}>
         <div class="container-fluid">
             <h3 class="page-title">{if $__cur_menus.text}{$__cur_menus.text}{else}默认{/if}</h3>
             {if $__admin_with.error}
@@ -97,5 +95,4 @@
                     <button class="close" data-dismiss="alert"></button>{$__admin_with.success}
                 </div>
             {/if}
-            {block name="container"}{/block}
         </div>

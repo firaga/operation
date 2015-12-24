@@ -159,6 +159,22 @@ Ko_Web_Route::VGet('suggestmenu', function () {
 	echo json_encode(array('ret' => 1, 'msg' => $result));
 	exit;
 });
+Ko_Web_Route::VGet('user', function () {
+	$msg = 'hello world';
+	$render = new KRender_web;
+	$render->oSetTemplate('operation/menu/list.tpl')
+		->oSetData('msg', $msg)
+		->oSend();
+});
+
+Ko_Web_Route::VGet('privacy', function () {
+	$msg = 'hello world';
+	$render = new KRender_web;
+	$render->oSetTemplate('operation/menu/list.tpl')
+		->oSetData('msg', $msg)
+		->oSend();
+});
+
 
 function _getMenuHtml($menu, $split) {
 	$sHtml = '<ol class="dd-list">';
